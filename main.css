@@ -1,0 +1,35 @@
+form {
+    width: 300px;
+    position: relative;
+    margin: 20px auto;
+    border: 1px solid #000;
+}
+
+.w-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#content > div {
+    position: relative;
+    margin: 50px auto 0;
+    width: 400px;
+    background: yellow;
+    height: auto;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+form > input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+form > input:not(.btn) {
+    padding-left: 10px!important;
+}
