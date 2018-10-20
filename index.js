@@ -1,13 +1,9 @@
-// Напишите функцию, isEmpty(obj)которая возвращает,
-// true если объект не имеет свойств, falseиначе.
-
-var schedule = {};
-function isEmpty(obj) {
-	for ( var key in obj ) {
-		if (obj != undefined) return false;
-	}
-	return true;
+// Свойства объекта Sum
+// У нас есть объект хранения зарплат нашей команды:
+let salaries = {
+	John: 100,
+	Ann: 160,
+	Pete: 130
 }
-alert(isEmpty(schedule) ); // true
-schedule["8:30"] = "get up";
-alert( isEmpty(schedule) ); // false
+// Напишите код, чтобы суммировать все зарплаты и хранить в
+// переменной sum. Должно быть 390в приведенном выше примере.
