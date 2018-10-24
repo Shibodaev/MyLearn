@@ -1,21 +1,34 @@
 "use strict";
-
-var salaries = {
-	"Вася": 100,
-	"Петя": 300,
-	"Даша": 250
-};
-
-function salary(obj) {
-	var num = 0, name = "";
-	for (var key in obj) {
-		if (obj[key] > num ) {
-			num = obj[key];
-			name = key;
-		}
+// Создать калькулятор
+// важность: 5решение
+// Создайте объект calculatorтремя способами:
+//
+// 	read() запрашивает два значения и сохраняет их как свойства объекта.
+// sum() возвращает сумму сохраненных значений.
+// mul() умножает сохраненные значения и возвращает результат.
+// 	let calculator = {
+// 	// ... your code ...
+// };
+//
+// calculator.read();
+// alert( calculator.sum() );
+// alert( calculator.mul() )
+// https://javascript.info/object-methods
+// моё решение
+let calculator = {
+	a : +prompt( "a?", " " ),
+	b : +prompt( "b?", " " ),
+	read() {
+		this.a;
+		this.b;
+	},
+	sum() {
+		return this.a + this.b;
+	},
+	mul() {
+		return this.a * this.b;
 	}
-	console.log(name);
-}
-salary(salaries)
-
-
+};
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
