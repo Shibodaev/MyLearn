@@ -1,58 +1,27 @@
-"use strict";
-// Создать калькулятор
-// важность: 5решение
-// Создайте объект calculatorтремя способами:
-//
-// 	read() запрашивает два значения и сохраняет их как свойства объекта.
-// sum() возвращает сумму сохраненных значений.
-// mul() умножает сохраненные значения и возвращает результат.
-// 	let calculator = {
-// 	// ... your code ...
-// };
-//
-// calculator.read();
-// alert( calculator.sum() );
-// alert( calculator.mul() )
-// https://javascript.info/object-methods
-// моё решение
-// let calculator = {
-// 	sum() {
-// 		return this.a + this.b;
-// 	},
-//
-// 	mul() {
-// 		return this.a * this.b;
-// 	},
-//
-// 	read() {
-// 		this.a = +prompt('a?', 0);
-// 		this.b = +prompt('b?', 0);
-// 	}
-// };
-//
-// calculator.read();
-// alert( calculator.sum() );
-// alert( calculator.mul() );
-
-calculator.read();
-alert( calculator.sum() );
-alert( calculator.mul() );
+// Есть ladder объект, который позволяет идти вверх и вниз:
 
 
-let calculator = {
-	a : +prompt( "a?", " " ),
-	b : +prompt( "b?", " " ),
-	read() {
-		this.a;
-		this.b;
+// САМ НЕ РЕШИЛ
+let ladder = {
+	step: 0,
+	up() {
+		this.step++;
+		return this;
 	},
-	sum() {
-		return this.a + this.b;
+	down() {
+		this.step--;
+		return this;
 	},
-	mul() {
-		return this.a * this.b;
+	showStep: function() { // shows the current step
+		alert( this.step );
+		return this;
 	}
 };
-calculator.read();
-alert( calculator.sum() );
-alert( calculator.mul() );
+// Теперь, если нам нужно сделать несколько вызовов в
+// последовательности, вы можете сделать это следующим образом:
+ladder.up();
+ladder.up();
+ladder.down();
+ladder.showStep(); // 1
+//Измените код up и, down чтобы сделать цепочку цепочек, например:
+ladder.up().up().down().showStep(); // 1
