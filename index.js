@@ -1,21 +1,28 @@
 "use strict"
-//Есть ladder объект, который позволяет идти вверх и вниз:
-let ladder = {
-	step: 0,
-	up() {
-		this.step++;
-	},
-	down() {
-		this.step--;
-	},
-	showStep: function() { // shows the current step
-		alert( this.step );
+//-------------------------------------
+function Accumulator(startingValue){
+	this.read = function (value) {
+		this.value = startingValue;
+		startingValue = +prompt("value");
+		this.value += startingValue
 	}
-};
-// Измените код upи, down чтобы сделать цепочку цепочек, например:
-ladder.up();
-ladder.up();
-ladder.down();
-ladder.showStep(); // 1
-// Такой подход широко используется в библиотеках JavaScript.
-ladder.up().up().down().showStep(); // 1
+}
+
+let accumulator = new Accumulator(1); // initial value 1
+accumulator.read(); // adds the user-entered value
+accumulator.read(); // adds the user-entered value
+alert(accumulator.value);
+// //-------------------------------------
+// function Accumulator(startingValue) {
+// 	this.value = startingValue;
+//
+// 	this.read = function() {
+// 		this.value += +prompt('How much to add?', 0);
+// 	};
+//
+// }
+//
+// let accumulator = new Accumulator(1);
+// accumulator.read();
+// accumulator.read();
+// alert(accumulator.value);
