@@ -1,17 +1,17 @@
 "use strict"
 //-------------------------------------
 function nonUniqueElements(data) {
+	var result = [];
 	data.filter(function(num,index,arr) {
-		if (((((arr.indexOf(num) + 1) == arr[index]) && arr.lastIndexOf(num) != false)) == true) {
-		data.push(arr[num]);
-		
+		if(!(arr.indexOf(num) == index) || !(arr.lastIndexOf(num) == index) && true ){
+			result.push(arr[num])
 		}
 	})
-	// console.log(data);
+	console.log(result);
 };
-// nonUniqueElements([1, 2, 4, 5, 2, 1]);
-// nonUniqueElements([4, 2, 4, 5, 5, 1]);
-nonUniqueElements([5, 5,5,5]);
+
+nonUniqueElements([1,2,4,5,2,1]);
+nonUniqueElements([1,5,2,5,1]);
 // var assert = require('assert');
 // var result;
 // function nonUniqueElements(value,index,arr) {
