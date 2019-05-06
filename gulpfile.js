@@ -7,6 +7,7 @@ var gulp           = require('gulp'),
 		cleanCSS       = require('gulp-clean-css'),
 		rename         = require('gulp-rename'),
 		del            = require('del'),
+		plumber        =      require('gulp-plumber'),
 		imagemin       = require('gulp-imagemin'),
 		cache          = require('gulp-cache'),
 		autoprefixer   = require('gulp-autoprefixer'),
@@ -41,6 +42,7 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/js/common.min.js', // Всегда в конце
 		])
+	.pipe(plumber())
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Минимизировать весь js (на выбор)
 	.pipe(gulp.dest('app/js'))
@@ -49,6 +51,7 @@ gulp.task('js', ['common-js'], function() {
 
 gulp.task('sass', function() {
 	return gulp.src('app/sass/**/*.sass')
+	.pipe(plumber())
 	.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer(['last 15 versions']))
