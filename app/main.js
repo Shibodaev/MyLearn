@@ -1,14 +1,19 @@
-"use strict"
-function isEmpty (obj) {
-	debugger;
-	for(var key in obj) {
-		if(obj.key === undefined) {
-			return false;
-		}
+"use strict";
+var salaries = {
+	"Вася": 100,
+	"Петя": 300,
+	"Даша": 250
+  };
+  var obj = 0, name = "";
+  
+
+  for(var key in salaries){
+	if(obj < salaries[key] ) {
+		obj = salaries[key];
+		name = key
+	} else if (obj > salaries[key]) {
+		alert(name);
 	}
-	return true;
   }
-  var schedule = {};
-  alert( isEmpty(schedule) ); // true
-  schedule["8:30"] = "подъём";
-  alert( isEmpty(schedule) ); // false
+  
+
