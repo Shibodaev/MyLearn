@@ -1,39 +1,16 @@
 "use strict";
 /*
-Создайте функцию multiplyNumeric, которая получает
-объект и умножает все численные свойства на 2. Например:
-P.S. Для проверки на число используйте функцию:
-function isNumeric(n) {
-return !isNaN(parseFloat(n)) && isFinite(n)
-}
+Массивы!
+Как получить последний элемент из произвольного массива?
+У нас есть массив goods. Сколько в нем элементов – не знаем, но можем прочитать из goods.length.
+Напишите код для получения последнего элемента goods.
 */
+var goods = [2,1,3,5,4,9,8,7,6];
 
-var menu = {
-	width: 200,
-	height: 300,
-	title: "My menu"
-};
-function multiplyNumeric(object) {
-	for (const key in object) {
-		if (object.hasOwnProperty(key)) {
-			if (isNumeric(object[key])) {
-				object[key] *= 2;
-			} else {
-				return object[key];
-			}
-		}
+for( var i = 0; i <= goods.length; i++ ) {
+	if( i == goods.length - 1) {
+		alert(goods[i]);
 	}
-	function isNumeric(n) {
-		return !isNaN(parseFloat(n)) && isFinite(n);
-	}
-};
-multiplyNumeric(menu);
-console.log(menu);
+}
 
-/*после вызова
-menu = {
-	width: 400,
-	height: 600,
-	title: "My menu"
-};*/
 
