@@ -1,21 +1,26 @@
 "use strict";
 
 /*
-Создайте функцию find(arr, value),
-которая ищет в массиве arr значение value и возвращает его номер,
-если найдено, или -1, если не найдено.
-*/
+Создайте функцию filterRange(arr, a, b),
+которая принимает массив чисел arr и возвращает новый массив,
+который содержит только числа из arr из диапазона от a до b.
+То есть, проверка имеет вид a ≤ arr[i] ≤ b. Функция не должна менять arr.
 
-function find(arr, value) {
-    for (let i = 0; i < arr.length; i++) {
-        if(arr[i] === value) {
-            return i;
-        }   
+var arr = [5, 4, 3, 8, 0];
+var filtered = filterRange(arr, 3, 5);
+// теперь filtered = [5, 4, 3]
+// arr не изменился
+*/
+    var arr = [5, 4, 3, 8, 0];
+    function filterRange(arr, a, b) {
+        var results = []
+        for(var i = 0; i < arr.length; i++) {
+            if( arr[i] >= a && arr[i] <= b) {
+                results.push(arr[i]);
+            }
+        }
+        return results;
     }
-    return -1;
-};
-var arr = ["test", 2, 1.5, false];
-console.log(find(arr, "test")); // 0
-console.log(find(arr, 2)); // 1
-console.log(find(arr, 1.5)); // 2
-console.log(find(arr, 0)); // -1 
+
+    var filtered = filterRange(arr, 3, 5);
+    alert(filtered);
