@@ -13,10 +13,6 @@ var rand = min + Math.floor(Math.random() * (max + 1 - min));
 var arr = ["Яблоко", "Апельсин", "Груша", "Лимон"], min = 0, max = arr.length;
 function randomProperty(prop) {
 	var rand = min + Math.floor(Math.random() * (max + 1 - min))
-	for ( var i = 0; i < max; i++) {
-		if(i == rand) {
-			alert(arr[i]);
-		}
-	}
+	alert(arr[rand]);
 }
 randomProperty();
