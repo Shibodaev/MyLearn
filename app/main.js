@@ -54,6 +54,7 @@ function assert(value, desc) {
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -303,3 +304,16 @@ function assert(value, desc) {
 // // assert(sum(1, 2) === 3, "Верно!!!");
 // // assert(sum(1, 2, 3) === 6, "Верно!!!");
 // // assert(sum(1, 2, 3, 4) === 10, "Верно!!!");
+=======
+// // Функция ТЕСТА
+function assert(value, desc) {
+    var li = document.createElement("li");
+    li.className = value ? "pass" : "fail";
+    li.appendChild(document.createTextNode(desc));
+    document.getElementById("results").appendChild(li);
+}
+// window.onload = function () {
+//     assert(true, "Тестовый набор работает.");
+//     assert(false, "Fail = Ошибка 1");
+// };
+>>>>>>> 9399b9ef10a4e1cd20a50c0e64f1d89bcfb77c9e
